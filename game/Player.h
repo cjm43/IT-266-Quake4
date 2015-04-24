@@ -311,7 +311,7 @@ public:
 		bool		strafeRight		:1;
 		bool		attackHeld		:1;
 		bool		weaponFired		:1;
-		bool		jump			:1;
+		bool		jump			:1;//1
 		bool		crouch			:1;
 		bool		onGround		:1;
 		bool		onLadder		:1;

@@ -41,6 +41,7 @@ const int PMF_JUMP_HELD			= 16;		// set when jump button is held down
 const int PMF_TIME_LAND			= 32;		// movementTime is time before rejump
 const int PMF_TIME_KNOCKBACK	= 64;		// movementTime is an air-accelerate only time
 const int PMF_TIME_WATERJUMP	= 128;		// movementTime is waterjump
+const int PMF_DOUBLE_JUMPED     = 256;		// set when the player double jumped
 const int PMF_ALL_TIMES			= (PMF_TIME_WATERJUMP|PMF_TIME_LAND|PMF_TIME_KNOCKBACK);
 
 int c_pmove = 0;
@@ -647,6 +648,8 @@ void idPhysics_Player::AirMove( void ) {
 		}
 	}
 // RAVEN END
+	idPhysics_Player::CheckJump(); 
+		
 
 	idPhysics_Player::Friction();
 
@@ -1273,12 +1276,12 @@ idPhysics_Player::CheckJump
 */
 bool idPhysics_Player::CheckJump( void ) {
 	idVec3 addVelocity;
-
+	
 	if ( command.upmove < 10 ) {
 		// not holding jump
 		return false;
 	}
-
+	gameLocal.Printf("single jump attempted 1\n");
 	// must wait for jump to be released
 	if ( current.movementFlags & PMF_JUMP_HELD ) {
 		return false;
@@ -1288,7 +1291,12 @@ bool idPhysics_Player::CheckJump( void ) {
 	if ( current.movementFlags & PMF_DUCKED ) {
 		return false;
 	}
-
+	gameLocal.Printf("single jump attempted 2\n");
+	if(current.movementFlags & PMF_JUMPED)
+	{
+		gameLocal.Printf("double jump attempted\n");
+		current.movementFlags |=  PMF_DOUBLE_JUMPED;
+	}
 	groundPlane = false;		// jumping away
 	walking = false;
 	current.movementFlags |= PMF_JUMP_HELD | PMF_JUMPED;
@@ -1463,7 +1471,7 @@ void idPhysics_Player::MovePlayer( int msec ) {
 	playerSpeed = walkSpeed;
 
 	// remove jumped and stepped up flag
-	current.movementFlags &= ~(PMF_JUMPED|PMF_STEPPED_UP|PMF_STEPPED_DOWN);
+	current.movementFlags &= ~(PMF_JUMPED|PMF_STEPPED_UP|PMF_STEPPED_DOWN|PMF_DOUBLE_JUMPED);
 	current.stepUp = 0.0f;
 
 	if ( command.upmove < 10 ) {
@@ -1612,7 +1620,7 @@ idPhysics_Player::HasJumped
 ================
 */
 bool idPhysics_Player::HasJumped( void ) const {
-	return ( ( current.movementFlags & PMF_JUMPED ) != 0 );
+	return ( ( current.movementFlags & (PMF_JUMPED|PMF_DOUBLE_JUMPED) ) != 0 );
 }
 
 /*
