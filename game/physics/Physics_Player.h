@@ -73,6 +73,7 @@ public:
 	waterLevel_t			GetWaterLevel( void ) const;
 	int						GetWaterType( void ) const;
 	bool					HasJumped( void ) const;
+	bool			        HasDoubleJumped( void ) const;
 	bool					HasSteppedUp( void ) const;
 	float					GetStepUp( void ) const;
 	bool					IsCrouching( void ) const;
@@ -130,6 +131,7 @@ private:
 	float					maxStepHeight;
 	float					maxJumpHeight;
 	int						debugLevel;				// if set, diagnostic output will be printed
+	bool				    djump;
 
 	// player input
 	usercmd_t				command;

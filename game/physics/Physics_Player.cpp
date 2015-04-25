@@ -648,8 +648,11 @@ void idPhysics_Player::AirMove( void ) {
 		}
 	}
 // RAVEN END
-	idPhysics_Player::CheckJump(); 
-		
+
+	
+	
+	 //idPhysics_Player::CheckJump(); 
+	 current.movementFlags |=  PMF_DOUBLE_JUMPED;	
 
 	idPhysics_Player::Friction();
 
@@ -700,6 +703,7 @@ void idPhysics_Player::WalkMove( void ) {
 		idPhysics_Player::WaterMove();
 		return;
 	}
+	djump = false;
 
 	if ( idPhysics_Player::CheckJump() ) {
 		// jumped away
@@ -1281,7 +1285,7 @@ bool idPhysics_Player::CheckJump( void ) {
 		// not holding jump
 		return false;
 	}
-	gameLocal.Printf("single jump attempted 1\n");
+	//gameLocal.Printf("single jump attempted 1\n");
 	// must wait for jump to be released
 	if ( current.movementFlags & PMF_JUMP_HELD ) {
 		return false;
@@ -1291,15 +1295,18 @@ bool idPhysics_Player::CheckJump( void ) {
 	if ( current.movementFlags & PMF_DUCKED ) {
 		return false;
 	}
+	
 	gameLocal.Printf("single jump attempted 2\n");
-	if(current.movementFlags & PMF_JUMPED)
-	{
-		gameLocal.Printf("double jump attempted\n");
-		current.movementFlags |=  PMF_DOUBLE_JUMPED;
-	}
+	
 	groundPlane = false;		// jumping away
 	walking = false;
 	current.movementFlags |= PMF_JUMP_HELD | PMF_JUMPED;
+
+	if(current.movementFlags & PMF_DOUBLE_JUMPED)
+	{
+		gameLocal.Printf("double jump failed\n");
+		return false;
+	}
 
 	addVelocity = 2.0f * maxJumpHeight * -gravityVector;
 	addVelocity *= idMath::Sqrt( addVelocity.Normalize() );
@@ -1471,7 +1478,7 @@ void idPhysics_Player::MovePlayer( int msec ) {
 	playerSpeed = walkSpeed;
 
 	// remove jumped and stepped up flag
-	current.movementFlags &= ~(PMF_JUMPED|PMF_STEPPED_UP|PMF_STEPPED_DOWN|PMF_DOUBLE_JUMPED);
+	current.movementFlags &= ~(PMF_JUMPED|PMF_STEPPED_UP|PMF_STEPPED_DOWN);
 	current.stepUp = 0.0f;
 
 	if ( command.upmove < 10 ) {
@@ -1620,7 +1627,10 @@ idPhysics_Player::HasJumped
 ================
 */
 bool idPhysics_Player::HasJumped( void ) const {
-	return ( ( current.movementFlags & (PMF_JUMPED|PMF_DOUBLE_JUMPED) ) != 0 );
+	return ( ( current.movementFlags & (PMF_JUMPED) ) != 0 );
+}
+bool idPhysics_Player::HasDoubleJumped( void ) const {
+	return ( ( current.movementFlags & (PMF_DOUBLE_JUMPED) ) != 0 );
 }
 
 /*
