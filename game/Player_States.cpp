@@ -791,7 +791,7 @@ stateResult_t idPlayer::State_Legs_Jump ( const stateParms_t& parms ) {
 		case STAGE_INIT:
 			// prevent infinite recursion
 			pfl.jump = false;
-			//pfl.doubleJump = false;
+			pfl.doubleJump = false;
 			if ( pfl.run ) {
 				PlayAnim ( ANIMCHANNEL_LEGS, "run_jump", parms.blendFrames );
 			} else {

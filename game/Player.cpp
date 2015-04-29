@@ -9037,13 +9037,13 @@ void idPlayer::Move( void ) {
  		pfl.onGround	= ( influenceActive == INFLUENCE_LEVEL2 );
 		pfl.onLadder	= false;
 		pfl.jump		= false;
-		//pfl.doubleJump  = false;
+		pfl.doubleJump  = false;
 	} else {
 		pfl.crouch	= physicsObj.IsCrouching();
 		pfl.onGround	= physicsObj.HasGroundContacts();
 		pfl.onLadder	= physicsObj.OnLadder();
 		pfl.jump		= physicsObj.HasJumped();
-		//pfl.doubleJump  = !physicsObj.HasDoubleJumped();
+		pfl.doubleJump  = physicsObj.HasDoubleJumped();
 
  		// check if we're standing on top of a monster and give a push if we are
  		idEntity *groundEnt = physicsObj.GetGroundEntity();

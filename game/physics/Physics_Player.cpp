@@ -651,7 +651,7 @@ void idPhysics_Player::AirMove( void ) {
 
 	
 	
-	 //idPhysics_Player::CheckJump(); 
+	 idPhysics_Player::CheckJump(); 
 	 current.movementFlags |=  PMF_DOUBLE_JUMPED;	
 
 	idPhysics_Player::Friction();
@@ -1300,13 +1300,13 @@ bool idPhysics_Player::CheckJump( void ) {
 	
 	groundPlane = false;		// jumping away
 	walking = false;
-	current.movementFlags |= PMF_JUMP_HELD | PMF_JUMPED;
+	current.movementFlags |= PMF_JUMP_HELD | PMF_JUMPED | PMF_DOUBLE_JUMPED;
 
 	if(current.movementFlags & PMF_DOUBLE_JUMPED)
-	{
-		gameLocal.Printf("double jump failed\n");
-		return false;
-	}
+	//{
+		//gameLocal.Printf("double jump failed\n");
+		//return false;
+	//}
 
 	addVelocity = 2.0f * maxJumpHeight * -gravityVector;
 	addVelocity *= idMath::Sqrt( addVelocity.Normalize() );
