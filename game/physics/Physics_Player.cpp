@@ -1302,7 +1302,12 @@ bool idPhysics_Player::CheckJump( void ) {
 	walking = false;
 	current.movementFlags |= PMF_JUMP_HELD | PMF_JUMPED | PMF_DOUBLE_JUMPED;
 
-	if(current.movementFlags & PMF_DOUBLE_JUMPED)
+	if(maxJumpHeight == 160)
+	{
+		return false;
+	}
+
+	//if(current.movementFlags & PMF_DOUBLE_JUMPED)
 	//{
 		//gameLocal.Printf("double jump failed\n");
 		//return false;
