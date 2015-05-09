@@ -43,7 +43,7 @@ idMoveState::idMoveState() {
 	toAreaNum			= 0;
 	startTime			= 0;
 	duration			= 0;
-	speed				= 0.0f;
+	speed				= 100.0f;//0.0f
 	range				= 0.0f;
 	wanderYaw			= 0;
 	nextWanderTime		= 0;
@@ -796,7 +796,7 @@ bool idAI::FaceEnemy( void ) {
 	move.moveCommand		= MOVE_FACE_ENEMY;
 	move.moveStatus			= MOVE_STATUS_WAITING;
 	move.startTime			= gameLocal.time;
-	move.speed				= 0.0f;
+	move.speed				= 100.0f;//0.0f
 	
 	move.fl.done			= true;
 	move.fl.moving			= false;

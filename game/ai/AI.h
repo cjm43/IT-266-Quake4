@@ -1092,7 +1092,7 @@ private:
 	void					Event_SetTalkState					( int state );
 	void					Event_SetLeader						( idEntity *newLeader );
 	void					Event_SetScript						( const char* scriptName, const char* funcName );
-	void					Event_SetMoveSpeed					( int speed );
+	void					Event_SetMoveSpeed					( int speed );//int speed
 	void					Event_SetPassivePrefix				( const char* prefix );
 
 	void					Event_GetAngles						( void );
