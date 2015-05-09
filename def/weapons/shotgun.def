@@ -80,7 +80,7 @@ entityDef weapon_shotgun
 	"joint_world_flash"			"muzzle_flash"
 
 	"fireRate"				".8"
-	"spread"				"7"
+	"spread"				"4"
 	"hitscans"				"10"
 
 	"inv_weapon"				"weapon_shotgun"
@@ -90,11 +90,12 @@ entityDef weapon_shotgun
 	"inv_name"				"#str_107410"
 
 	"weaponname"				"Shotgun"
-	"def_hitscan"				"hitscan_shotgun_pellet"
+	//"def_hitscan"				"hitscan_shotgun_pellet"
+	"def_hitscan"				"hitscan_railgun_1"
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_shotgun"
-	"ammoType"				"ammo_shotgun"
-	"clipSize"				"8"
-	"ammoRequired"				"1"
+	"ammoType"				"ammo_blaster"//ammo_shotgun
+	"clipSize"				"0"//8
+	"ammoRequired"				"0"//1
 	"gui"					"guis/weapons/shotgun_ammo.gui"
 	"mtr_icon"				"gfx/guis/hud/icons/gun_shotgun"
 
@@ -300,6 +301,36 @@ entityDef weaponmod_shotgun_ammo
 //												HitScan
 //-------------------------------------------------------------------------------------------------------------------0
 
+entityDef hitscan_railgun_1
+{
+	"range"						"400"//40000
+
+	"push"						"40000"
+	
+	"def_damage"				"damage_railgun_1"
+		
+	"fx_impact"				"effects/weapons/railgun/impact_default.fx"
+	"fx_impact_water"			"effects/ambient/splash_med.fx"
+	"fx_path"				"effects/weapons/railgun/trail.fx"
+	"fx_impact_bpglass"			"effects/weapons/railgun/impact_bpglass.fx"
+	"fx_impact_glass"			"effects/weapons/railgun/impact_glass.fx"
+	"fx_impact_concrete"			"effects/weapons/railgun/impact_concrete.fx"
+	"fx_impact_rock"			"effects/weapons/railgun/impact_concrete.fx"	
+	"fx_impact_electronics"			"effects/weapons/railgun/impact_electronics.fx"
+	"fx_impact_flesh"			"effects/weapons/railgun/impact_flesh.fx"
+	"fx_impact_monstermetal"		"effects/weapons/railgun/impact_flesh.fx"
+	"fx_impact_mp"				"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_impact_concrete_mp"			"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_impact_rock_mp"			"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_impact_glass_mp"			"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_impact_bpglass_mp"			"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_impact_electronics_mp"		"effects/weapons/railgun/impact_default_mp.fx"
+	"fx_path_mp"				"effects/weapons/railgun/trail_mp.fx"	
+	"fxOriginOffset"			"0 -15 10"
+}
+
+
+/*
 entityDef hitscan_shotgun_pellet
 {
 	"inherit"				"hitscan_bullet"
@@ -323,11 +354,34 @@ entityDef hitscan_shotgun_pellet
 	// must be the same as weapon_shotgun_mp
 	"hitscans"				"11"
 }
-
+*/
 //--------------------------------------------------------------------------------------------------------------------
 // Damage
 //-------------------------------------------------------------------------------------------------------------------0
 
+entityDef damage_railgun_1 
+{
+	"damage"					"5"//125
+	"push"						"500"
+	"knockback"					"100"
+	"gib"						"1"
+
+	"dv_time"					"500"
+	"dv_scale"					".1"
+
+	"fx_wound"					"effects/wounds/energy.fx"
+
+//	"deathPush"					"200"
+	"deathPush"					"400"
+	"deathPushMin"				"4000 400"
+	"deathPushMax"				"7000 500"
+	
+	"bleed"						"1"
+
+	"pain"						"concussive"
+}
+
+/*
 entityDef damage_pellet
 {
 	"inherit"					"damage_bullet"
@@ -338,7 +392,7 @@ entityDef damage_pellet
 	"deathPush"					"100"
 	"deathPushMin"				"4000 500"
 	"deathPushMax"				"9000 600"
-}
+}*/
 
 entityDef damage_pellet_mp
 {

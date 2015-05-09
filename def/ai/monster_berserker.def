@@ -331,8 +331,8 @@ model model_monster_berserker
 
 entityDef melee_berserker_new
 {
-	"damage"								"30"
-	"knockback"								"80"
+	"damage"								"60"//30
+	"knockback"								"100"//80
 	"kickDir"								"0 0 -1"
 	"kick_time"								"600"
 	"kick_amplitude"						"3"
@@ -377,7 +377,7 @@ entityDef melee_berserker_blade
 entityDef melee_berserker_leap
 {
 	"inherit"								"melee_monster_base"
-	"damage"								"40"
+	"damage"								"80"//40
 	"knockback"								"120"
 	"snd_hit"								"berserker_blade_slice"
 }
@@ -497,7 +497,7 @@ entityDef monster_berserker
 	"use_aas"								"aas48"
 
 	// --------------------------------- Combat ----------------------------------
-	"health"								"300"
+	"health"								"1300"//300
 	"painThreshold"							"20"
 
 	"melee_range"							"100"

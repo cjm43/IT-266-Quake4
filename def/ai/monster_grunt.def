@@ -357,7 +357,7 @@ entityDef hitscan_grunt_bullet
 entityDef melee_grunt_base
 {
 	"inherit"						"melee_monster_base"
-	"damage"						"30"
+	"damage"						"60"//30
 	"knockback"						"80"
 
 	"kickDir"						"1 0 1"
@@ -464,10 +464,10 @@ entityDef monster_grunt
 	"missile_visibility_joint"				"muzzle_flash"
 	"attackRange"							"0 700"
 	
-	"tactical_ranged"						"0"
+	"tactical_ranged"						"1"//0
 	"tactical_rush"							"1"
 	"tactical_cover"						"0"
-	"tactical_hide"							"1"
+	"tactical_hide"							"0"//1
 
 	"melee_range"							"72"	
 	

@@ -857,7 +857,7 @@ model monster_strogg_marine_sgun
 entityDef damage_strogg_marine_blaster
 {
 	"inherit"							"damage_bullet_base"
-	"damage"							"6"
+	"damage"							"40" //6
 }
 
 entityDef projectile_strogg_marine_blaster
@@ -873,7 +873,7 @@ entityDef projectile_strogg_marine_blaster
 entityDef melee_strogg_marine_left
 {
 	"inherit"							"melee_monster_base"
-	"damage"							"10"
+	"damage"							"40"//10
 	"kickDir"							"0 -1 0.5"
 	"kick_time"							"350"
 	"kick_amplitude"					"4"
@@ -930,7 +930,7 @@ entityDef monster_strogg_marine_base
 	"melee_range"						"72"
 	"maxLostVisTime"					"5"
 
-	"tactical_ranged"					"1"
+	"tactical_ranged"					"0"//1
 	"tactical_rush"						"1"
 	"tactical_cover"					"0"
 	"tactical_hide"						"0"
@@ -1064,7 +1064,7 @@ entityDef monster_strogg_marine
 	// --------------------------------- Actions ------------------------------------
 	"minShots"							"3"
 	"maxShots"							"8"
-	"aggressiveRange"					"300"
+	"aggressiveRange"					"500"//300
 
 	"actionTimer_evade_rate"			"0.75"
 	"actionTimer_rangedAttack_rate"		".5"

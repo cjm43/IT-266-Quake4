@@ -84,7 +84,7 @@ entityDef weapon_railgun
   	"joint_view_barrel"			"srocket_muzzle_flash"
 	"joint_world_flash"			"muzzle_flash"
 
-	"fireRate"				"1.6"
+	"fireRate"				"1"//1.6
 	"spread"				"0"
 
 	"inv_weapon"				"weapon_railgun"
@@ -96,9 +96,9 @@ entityDef weapon_railgun
 	"def_hitscan"				"hitscan_railgun"	
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_railgun"
 
-	"ammoType"				"ammo_railgun"
-	"ammoRequired"				"1"
-	"clipSize"				"3"
+	"ammoType"				"ammo_blaster"//ammo_railgun
+	"ammoRequired"				"0"//1
+	"clipSize"				"0"//3
 	"lowAmmo"				"1"
 	"continuousFire"			"1"
 	"dryFireReload" 			"1"
@@ -341,7 +341,7 @@ entityDef weaponmod_railgun_penetrate
 
 entityDef hitscan_railgun
 {
-	"range"						"40000"
+	"range"						"400"//40000
 
 	"push"						"40000"
 	
@@ -425,7 +425,7 @@ entityDef hitscan_railgun_penetrate
 
 entityDef damage_railgun 
 {
-	"damage"					"125"
+	"damage"					"40"//125
 	"push"						"500"
 	"knockback"					"100"
 	"gib"						"1"

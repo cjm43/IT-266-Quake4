@@ -86,11 +86,11 @@ entityDef weapon_blaster
 
 //	"def_projectile"			"projectile_blaster"
 	"def_hitscan"				"hitscan_blaster"
-	"def_altprojectile"			"projectile_blaster_charged"
+	"def_altprojectile"			"hitscan_blaster" //projectile_blaster_charged
 	"ammoType"					"ammo_blaster"
 	"clipSize"					"0"
 	"ammoRequired"				"0"
-//	"launchFromBarrel"			"1"
+//	"launchFromBarrel"			"1" //1
 
 	"inv_weapon"				"weapon_blaster"
 	"inv_item"					"5"
@@ -229,7 +229,7 @@ model weapon_blaster_world
 
 entityDef hitscan_blaster
 {
-	"range"						"10000"
+	"range"						"10"//10000
 
 	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
 	"fx_impact_water"			"effects/ambient/splash_smll.fx"
@@ -252,14 +252,16 @@ entityDef hitscan_blaster
 entityDef projectile_blaster
 {
 	"spawnclass"				"idProjectile"
-	"mins"						"-2 -2 -2"
-	"maxs"						"2 2 2"
+	//"mins"						"-2 -2 -2"
+	//"maxs"						"2 2 2"
+	"mins"						"0 0 0"
+	"maxs"						"0 0 0"
 	"cone"						"2"
 	"noshadows"					"1"
 																
 	"def_damage"				"damage_blaster"
 								
-	"velocity"					"1500 0 0"
+	"velocity"					"15 0 0"//1500
 	"fuse"						"4"
 	"push"						"7500"
 								
@@ -281,6 +283,7 @@ entityDef projectile_blaster
 	"fx_impact_electronics"		"effects/weapons/machinegun/impact_electronics.fx"
 	"fx_impact_armor"			"effects/weapons/machinegun/impact_armor.fx"
 }
+
 
 entityDef projectile_blaster_charged
 {
@@ -310,7 +313,7 @@ entityDef projectile_blaster_charged
 entityDef damage_blaster
 {
 	"inherit"					"damage_bullet"
-	"damage"					"8"
+	"damage"					"1"//8
 
 	"fx_wound"					"effects/wounds/energy.fx"
 

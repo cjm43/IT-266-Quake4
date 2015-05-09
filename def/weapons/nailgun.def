@@ -113,7 +113,7 @@ entityDef weapon_nailgun
 	"drumSpeed"					".8"
 	
 	"inv_weapon"				"weapon_nailgun"
-	"inv_start_ammo_nailgun"			"50"
+	"inv_start_ammo_nailgun"			"50"//50
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_nailgun"
 	"inv_name"					"#str_107407"
@@ -126,8 +126,8 @@ entityDef weapon_nailgun
 	"def_projectile"			"projectile_nail"
 	"def_altprojectile"			"projectile_nail_seek"
 	"ammoType"					"ammo_nailgun"
-	"ammoRequired"				"1"
-	"clipSize"					"50"
+	"ammoRequired"				"1"//1
+	"clipSize"					"50"//50
 	"lowAmmo"					"1"
 
 	"mtr_flashShader"			"lights/muzzleflash"
@@ -141,8 +141,8 @@ entityDef weapon_nailgun
 	"muzzle_kick_maxtime"		"0.6"
 	"muzzle_kick_angles"		"0 0 0"
 	"muzzle_kick_offset"		"0.5 .15 .15"
-	"recoilTime"				"145"
-	"recoilAngles"				"-1 0 0"
+	"recoilTime"				"200"//145
+	"recoilAngles"				"10 10 0"//-1 0 0
 	
 	"ammoRegenStep"				"2"
 	"ammoRegenTime"				"1250"
@@ -193,18 +193,23 @@ entityDef weapon_nailgun_mp
 	"hidesurface"				"models/weapons/nailgun_mod_ammo"
 	"editor_ignore"				"1"
 	"inv_icon"				"gfx/guis/hud/icons/item_nailgun_colored.tga"
+	"mtr_simple_icon"			"simpleicons/item_nailgun_colored.tga"
+	"simple_icon_scale"			"32.0"
 	"model"						"models/weapons/nailgun/w_ng_mp.lwo"
 	"triggerSize"				"32"
 	
-	"muzzle_kick_time"			"0"
+	"muzzle_kick_time"			"100"//0
 	"muzzle_kick_maxtime"			"0"
-	"muzzle_kick_angles"			"0 0 0"
+	"muzzle_kick_angles"			"10 10 10"//0 0 0
 	"muzzle_kick_offset"			"0 0 0"
-	"recoilTime"				"0"
-	"recoilAngles"				"0 0 0"
+	"recoilTime"				"100"//0
+	"recoilAngles"				"10 10 10"//0 0 0
 	
 	"respawn_Team DM"			"30"
 	"respawn_Tourney"			"15"
+	
+	// played when you touch a weapon you can't acquire, i.e. weaponStay in MP
+	"snd_noAcquire"			"pickup_weaponstay"
 }
 
 entityDef moveable_item_nailgun
@@ -401,6 +406,28 @@ entityDef weaponmod_nailgun_ammo
 //													Projectile
 //-------------------------------------------------------------------------------------------------------------------0
 
+entityDef hitscan_blaster
+{
+	"range"						"10"//10000
+
+	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
+	"fx_impact_water"			"effects/ambient/splash_smll.fx"
+	"fx_impact_concrete"		"effects/weapons/hyperblaster/impact_concrete.fx"
+	"fx_impact_flesh"			"effects/weapons/hyperblaster/impact_flesh.fx"
+	"fx_impact_monstermetal"	"effects/weapons/hyperblaster/impact_flesh.fx"
+	"fx_impact_glass"			"effects/weapons/blaster/impact_glass.fx"					
+	"fx_impact_bpglass"			"effects/weapons/blaster/impact_bpglass.fx"
+	"fx_impact_electronics"		"effects/weapons/hyperblaster/impact_electronics.fx"	
+
+	"fx_path"					"effects/weapons/blaster/trail.fx"
+	
+	"def_damage"				"damage_blaster"
+		
+	"push"						"7500"
+
+	"impact_gib"				"1"
+}
+
 entityDef projectile_nail
 {
 	"spawnclass"				"idProjectile"
@@ -416,13 +443,14 @@ entityDef projectile_nail
 	"health"					"0"
 	"speed"						"1200"
 	"gravity"					"0"
-	"fuse"						"4"
+	"fuse"						"2"//4
+	"bouncyness"				"1"
 								
-	"detonate_on_fuse"			"1"
+	"detonate_on_fuse"			"0"//1
 	"detonate_on_death"			"0"
-	"detonate_on_world"			"1"
+	"detonate_on_world"			"1"//1
 	"detonate_on_actor"			"1"
-	"detonate_on_bounce"		"1"
+	"detonate_on_bounce"		"1"//1
 																
 	"decal_size"				"8"
 
@@ -430,6 +458,7 @@ entityDef projectile_nail
 	"bloodyImpactEffect"		"1"
 	
 	"fx_fly"			"effects/weapons/nailgun/fly.fx"
+	"fx_fly_mp_low"		"effects/weapons/nailgun/fly_mp_low.fx"
 	"fx_impact"			"effects/weapons/nailgun/impact_default.fx"
 	"fx_impact_water"		"effects/ambient/splash_smll.fx"
 	"fx_impact_concrete"		"effects/weapons/nailgun/impact_concrete.fx"
@@ -445,6 +474,16 @@ entityDef projectile_nail
 	"fx_impact_glass_mp"		"effects/weapons/nailgun/impact_default_mp.fx"
 	"fx_impact_bpglass_mp"		"effects/weapons/nailgun/impact_default_mp.fx"
 	"fx_impact_electronics_mp"	"effects/weapons/nailgun/impact_default_mp.fx"
+	
+	"fx_teleport_enter"		"effects/mp/item_teleport.fx"
+	"fx_teleport"			"effects/mp/item_teleport.fx"
+}
+
+entityDef projectile_nail_mp
+{
+	"inherit"					"projectile_nail"
+	"speed"						"1400"
+	"no_impact_prediction"		"1"
 }
 
 entityDef projectile_nail_seek
@@ -462,6 +501,7 @@ entityDef projectile_nail_seek
 //--------------------------------------------------------------------------------------------------------------------
 //													Damage
 //-------------------------------------------------------------------------------------------------------------------0
+
 
 entityDef damage_nailDirect 
 {
@@ -492,13 +532,13 @@ entityDef damage_nailSplash
 entityDef damage_nailDirect_mp
 {
 	"inherit"				"damage_nailDirect"
-	"damage"				"30"
+	"damage"				"25"
 	"knockback"				"30"
 }
 
 entityDef damage_nailSplash_mp
 {
-	"damage"					"30"
+	"damage"					"25"
 	"radius"					"75"
 	"knockback"					"30"
 	"push"						"0"
