@@ -100,7 +100,7 @@ entityDef weapon_machinegun
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_machinegun"
 	//"def_projectile"			"projectile_blaster"
 	"def_hitscan"				"hitscan_blaster_1"
-	"def_althitscan"			"hitscan_zoomed_bullet"
+	"def_althitscan"			"hitscan_blaster_1"
 	
 	"ammoType"					"ammo_blaster"//ammo_machinegun
 	"ammoRequired"				"0"//1
@@ -401,7 +401,7 @@ entityDef hitscan_zoomed_bullet
 entityDef damage_blaster_1
 {
 	"inherit"					"damage_bullet"
-	"damage"					"800"
+	"damage"					"5"
 
 	"fx_wound"					"effects/wounds/energy.fx"
 

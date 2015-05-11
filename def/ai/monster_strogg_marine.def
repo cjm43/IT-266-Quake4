@@ -222,7 +222,7 @@ model model_monster_strogg_marine
 	anim run											models/monsters/strogg_marine/run.md5anim
 	{
 		sync_cycle
-		frame 4,14										footstep
+		frame 4,14										footstep //4,14
 		frame 6,16										sound				snd_gear
 	}
 	anim run_backwards			models/monsters/strogg_marine/back_run.md5anim
@@ -293,7 +293,7 @@ model model_monster_strogg_marine
 	{
 		frame 8											fx					fx_swipe						l_wrist		
 		frame 8											sound_weapon				smarine_swing
-		frame 12										ai_attack_melee		melee_right
+		frame 9   /*12*/										ai_attack_melee		melee_right 
 	}
 	anim melee_attack3								models/monsters/strogg_marine/melee02.md5anim
 	{
@@ -1128,7 +1128,7 @@ entityDef monster_strogg_marine
 entityDef damage_strogg_marine_bullet
 {
 	"inherit"							"damage_bullet_base"
-	"damage"							"3"
+	"damage"							"40"//3
 }
 
 entityDef hitscan_strogg_marine_bullet
@@ -1244,7 +1244,7 @@ entityDef monster_strogg_marine_mgun
 entityDef damage_strogg_marine_shotgun
 {
 	"inherit"							"damage_bullet_base"
-	"damage"							"3"
+	"damage"							"50"//3
 }
 
 entityDef hitscan_strogg_marine_shotgun

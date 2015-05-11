@@ -401,14 +401,14 @@ entityDef damage_gunner_nail
 //	"damage"					"10"
 //	"damage"					"20"
 //	"damage"					"10"
-	"damage"					"5"
+	"damage"					"40"//5
 }
 
 /*
 entityDef damage_gunner_nailSplash 
 {
 	"inherit"					"damage_nailSplash"
-	"damage"					"10"
+	"damage"					"30"//10
 }
 */
 
@@ -518,7 +518,7 @@ entityDef melee_gunner_left
 entityDef melee_gunner
 {
 	"inherit"					"melee_monster_base"
-	"damage"					"20"
+	"damage"					"40"//20
 	"knockback"					"30"
 	"snd_hit"					"gunner_punch"
 
@@ -608,14 +608,14 @@ entityDef monster_gunner
 
 	// --------------------------------- Combat ----------------------------------
 	"health"								"300"
-	"melee_range"							"100"
+	"melee_range"							"200"//100
 	"painThreshold"							"1"
 	"aggressiveRange"						"512"
 
 	"tactical_ranged"						"1"
-	"tactical_rush"							"0"
+	"tactical_rush"							"1"//0
 	"tactical_cover"						"0"
-	"tactical_hide"							"1"
+	"tactical_hide"							"0"//1
 
 	// --------------------------------- Damage Zones -----------------------------
 	"damage_zone head"						"*neck"

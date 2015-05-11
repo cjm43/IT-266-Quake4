@@ -80,7 +80,7 @@ entityDef weapon_shotgun
 	"joint_world_flash"			"muzzle_flash"
 
 	"fireRate"				".8"
-	"spread"				"4"
+	"spread"				"2"//4
 	"hitscans"				"10"
 
 	"inv_weapon"				"weapon_shotgun"
@@ -326,7 +326,7 @@ entityDef hitscan_railgun_1
 	"fx_impact_bpglass_mp"			"effects/weapons/railgun/impact_default_mp.fx"
 	"fx_impact_electronics_mp"		"effects/weapons/railgun/impact_default_mp.fx"
 	"fx_path_mp"				"effects/weapons/railgun/trail_mp.fx"	
-	"fxOriginOffset"			"0 -15 10"
+	"fxOriginOffset"			"-100 -5 10"//0 -15 10
 }
 
 

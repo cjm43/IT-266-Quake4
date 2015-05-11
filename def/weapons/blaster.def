@@ -229,7 +229,7 @@ model weapon_blaster_world
 
 entityDef hitscan_blaster
 {
-	"range"						"10"//10000
+	"range"						"5"//10000
 
 	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
 	"fx_impact_water"			"effects/ambient/splash_smll.fx"
@@ -313,7 +313,7 @@ entityDef projectile_blaster_charged
 entityDef damage_blaster
 {
 	"inherit"					"damage_bullet"
-	"damage"					"1"//8
+	"damage"					"2"//8
 
 	"fx_wound"					"effects/wounds/energy.fx"
 

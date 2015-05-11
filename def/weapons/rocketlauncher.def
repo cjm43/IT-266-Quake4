@@ -75,7 +75,7 @@ entityDef weapon_rocketlauncher
 	"inv_icon"					"gfx/guis/hud/icons/item_rocket.tga"
 	"inv_name"					"#str_107409"	
 
-	"fireRate"					".8"
+	"fireRate"					".5"//.8
 	"reloadRate"				".8"
 	"spread"					"0"
 
@@ -325,8 +325,8 @@ entityDef projectile_rocket
 	"def_damage"				"damage_rocketDirect"
 	"def_splash_damage"			"damage_rocketSplash"
 																											
-	"speed"						"900"
-	"fuse"						"6"
+	"speed"						"1500" //900
+	"fuse"						".1"//6
 	"push"						"48000"
 	
 							
@@ -356,6 +356,7 @@ entityDef projectile_rocket
 	"friendly_impact"			"1"
 }
 
+
 entityDef projectile_rocket_mp
 {
 	"inherit"					"projectile_rocket"
@@ -379,7 +380,7 @@ entityDef projectile_rocket_homing
 
 entityDef damage_rocketDirect 
 {
-	"damage"					"150"
+	"damage"					"30"//150
 	"push"						"45000"
 	"gib"						"1"
 
@@ -401,7 +402,7 @@ entityDef damage_rocketDirect_mp
 
 entityDef damage_rocketSplash 
 {
-	"damage"					"150"
+	"damage"					"0"//150
 	"radius"					"180"
 	"knockback"					"100"
 	"push"						"10000"
