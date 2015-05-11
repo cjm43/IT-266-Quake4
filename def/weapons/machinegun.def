@@ -339,7 +339,7 @@ model weapon_machinegun_world
 
 entityDef hitscan_blaster_1
 {
-	"range"						"300"
+	"range"						"200"
 
 	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
 	"fx_impact_water"			"effects/ambient/splash_smll.fx"
