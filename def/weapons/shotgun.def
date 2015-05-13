@@ -79,7 +79,7 @@ entityDef weapon_shotgun
 	"joint_view_guiLight"			"body"
 	"joint_world_flash"			"muzzle_flash"
 
-	"fireRate"				".8"
+	"fireRate"				".5" //.8
 	"spread"				"2"//4
 	"hitscans"				"10"
 
@@ -303,7 +303,7 @@ entityDef weaponmod_shotgun_ammo
 
 entityDef hitscan_railgun_1
 {
-	"range"						"400"//40000
+	"range"						"150"//40000
 
 	"push"						"40000"
 	
@@ -326,7 +326,7 @@ entityDef hitscan_railgun_1
 	"fx_impact_bpglass_mp"			"effects/weapons/railgun/impact_default_mp.fx"
 	"fx_impact_electronics_mp"		"effects/weapons/railgun/impact_default_mp.fx"
 	"fx_path_mp"				"effects/weapons/railgun/trail_mp.fx"	
-	"fxOriginOffset"			"-100 -5 10"//0 -15 10
+	"fxOriginOffset"			"0 0 -1"//0 -15 10
 }
 
 

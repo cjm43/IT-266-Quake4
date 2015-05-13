@@ -346,7 +346,7 @@ entityDef projectile_hyperblaster_bounce1
 
 entityDef damage_railgun_2 
 {
-	"damage"					"10"//125
+	"damage"					"7"//125
 	"push"						"500"
 	"knockback"					"100"
 	"gib"						"1"

@@ -679,7 +679,7 @@ entityDef player_marine
 	"pm_jumpheight"						"148"  //48
 	"pm_stepsize"						"46" //16
 	"pm_speed"						"500"  	//DOOM speed was 140, 160
-	"pm_walkspeed"						"80"
+	"pm_walkspeed"						"500" //80
 	"pm_crouchspeed"					"180" //80
 	"pm_noclipspeed"					"270"	
 	"pm_minviewpitch"					"-89"	// looking up
@@ -699,7 +699,7 @@ entityDef player_marine
 	"pm_bboxwidth"						"32"
 	"pm_crouchbob"						"0.5"		// ducked characters bob much faster
 	"pm_walkbob"						"0.3"		// walking bobs slow
-	"pm_runbob"							"15.4"		// faster speeds bob faster, 0.4
+	"pm_runbob"							"55.4"		// faster speeds bob faster, 0.4
 	"pm_modelview"						"0"			// 0 == normal, 1 == view inside model, 2 == view inside model when dead
 	"pain_delay"						"0.5"		// how long to wait before playing pain sound
 	"respawn_delay"						"1.7"		// minimum delay for respawning after death
