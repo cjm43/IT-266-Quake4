@@ -401,7 +401,7 @@ entityDef hitscan_zoomed_bullet
 entityDef damage_blaster_1
 {
 	"inherit"					"damage_bullet"
-	"damage"					"5"
+	"damage"					"3"
 
 	"fx_wound"					"effects/wounds/energy.fx"
 

@@ -285,7 +285,7 @@ entityDef projectile_grenade
 
 entityDef damage_grenadeDirect 
 {
-	"damage"					"10"//125
+	"damage"					"20"//125
 	"gib"						"1"
 
 	"deathPush"					"200"

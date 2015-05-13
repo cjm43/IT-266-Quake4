@@ -361,7 +361,7 @@ entityDef hitscan_shotgun_pellet
 
 entityDef damage_railgun_1 
 {
-	"damage"					"5"//125
+	"damage"					"8"//125
 	"push"						"500"
 	"knockback"					"100"
 	"gib"						"1"

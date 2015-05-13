@@ -113,7 +113,7 @@ void rvMonsterGrunt::RageStart ( void ) {
 	actionEvadeRight.fl.disabled = true;
 	
 	// Speed up animations
-	animator.SetPlaybackRate ( 10.25f );//1.25
+	animator.SetPlaybackRate ( 1.25f );//1.25
 
 	// Disable pain
 	pain.threshold = 0;

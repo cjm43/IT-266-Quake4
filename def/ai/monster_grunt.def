@@ -119,8 +119,8 @@ model model_monster_grunt
 	anim run											models/monsters/grunt/ID_run.md5anim	
 	{
 		sync_cycle
-		frame	3,13									sound			snd_breathe //3,13
-		frame	7,16									footstep
+		frame	3,13									sound			snd_breathe
+		frame	7,8									footstep  //7,16
 	}	
 	
 	anim pullup											models/monsters/grunt/pullup.md5anim
@@ -341,7 +341,7 @@ model model_monster_grunt
 entityDef damage_grunt_bullet
 {
 	"inherit"						"damage_bullet_base"
-	"damage"						"4"
+	"damage"						"40"//4
 }
 
 entityDef hitscan_grunt_bullet
@@ -389,7 +389,7 @@ entityDef melee_grunt_base
 entityDef melee_grunt
 {
 	"inherit"						"melee_grunt_base"
-	"damage"						"20"
+	"damage"						"50"//20
 	"knockback"						"40"
 }
 
