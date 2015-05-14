@@ -2215,7 +2215,7 @@ model model_char_marine
 entityDef damage_marine_bullet
 {
 	"inherit"									"damage_bullet_base"
-	"damage"									"10"
+	"damage"									"1"//10
 
 	"deathPush"									"100"
 	"deathPushMin"								"3000 350"
@@ -2254,7 +2254,7 @@ entityDef hitscan_marine_bullet_cortez
 entityDef melee_marine
 {
 	"inherit"					"melee_monster_base"
-	"damage"					"150"
+	"damage"					"15"//150
 	"knockback"					"40"
 	"snd_hit"					"gunner_punch"
 
@@ -2556,7 +2556,7 @@ entityDef char_marine
 entityDef damage_marine_shotgun_bullet
 {
 	"inherit"									"damage_bullet_base"
-	"damage"									"8"
+	"damage"									"1"//8
 }
 
 entityDef hitscan_marine_shotgun_bullet
@@ -2627,7 +2627,7 @@ entityDef char_marine_shotgun
 entityDef damage_marine_hyperblaster
 {
 	"inherit"											"damage_blaster"
-	"damage"											"14"
+	"damage"											"1"//14
 
 	"deathPush"											"100"
 	"deathPushMin"										"3000 350"

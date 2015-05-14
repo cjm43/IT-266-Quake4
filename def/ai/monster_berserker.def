@@ -497,7 +497,7 @@ entityDef monster_berserker
 	"use_aas"								"aas48"
 
 	// --------------------------------- Combat ----------------------------------
-	"health"								"1300"//300
+	"health"								"1000"//300
 	"painThreshold"							"20"
 
 	"melee_range"							"100"

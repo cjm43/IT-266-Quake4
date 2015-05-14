@@ -229,7 +229,7 @@ model weapon_blaster_world
 
 entityDef hitscan_blaster
 {
-	"range"						"2"//10000
+	"range"						"1"//10000
 
 	"fx_impact"					"effects/weapons/blaster/impact_default.fx"
 	"fx_impact_water"			"effects/ambient/splash_smll.fx"
@@ -248,7 +248,7 @@ entityDef hitscan_blaster
 
 	"impact_gib"				"1"
 }
-
+/*
 entityDef projectile_blaster
 {
 	"spawnclass"				"idProjectile"
@@ -283,7 +283,7 @@ entityDef projectile_blaster
 	"fx_impact_electronics"		"effects/weapons/machinegun/impact_electronics.fx"
 	"fx_impact_armor"			"effects/weapons/machinegun/impact_armor.fx"
 }
-
+*/
 
 entityDef projectile_blaster_charged
 {
